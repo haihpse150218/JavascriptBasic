@@ -97,3 +97,19 @@ const string_parameterize = (str) => {
     return str.trim().toLowerCase().replace(/[^a-z0-9 ]/g, "").replace(/\s/g, "-");
 }
 console.log(string_parameterize("Robin Singh from USA."));
+
+function guid(len) {
+    var buf = [],
+        chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
+        charlen = chars.length,
+        length = len || 32;
+
+    for (var i = 0; i < length; i++) {
+        buf[i] = chars.charAt(Math.floor(Math.random() * charlen));
+    }
+
+    return buf.join('');
+}
+
+console.log(guid());
+console.log(guid(15));
